@@ -13,4 +13,6 @@ RUN \
   ln -s /opt/jadx-${JADX_VERSION}/bin/jadx /usr/local/bin/jadx && \
   ln -s /opt/jadx-${JADX_VERSION}/bin/jadx-gui /usr/local/bin/jadx-gui
 
+WORKDIR /workspace
+
 CMD ["jadx"]

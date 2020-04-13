@@ -15,7 +15,12 @@ docker pull abh1sek/jadx
 Here we will decompile an APK into Java code using JADX as a container
 
 ```
-docker run --rm -it -v `pwd`/worskspace abh1sek/jadx jadx --help
+docker run --user $(id -u):$(id -g) \
+  --rm -it -v `pwd`:/workspace abh1sek/jadx \
+  jadx \
+  --deobf \
+  -d ./output \
+  ./input.apk
 ```
 
 ### Run GUI
