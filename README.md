@@ -4,11 +4,18 @@
 
 ## TLDR; Get me started
 
+### Pull the image
+
+```bash
+docker pull abh1sek/jadx
+```
+
 ### Run Cli
 
 Here we will decompile an APK into Java code using JADX as a container
 
 ```
+docker run --rm -it -v `pwd`/worskspace abh1sek/jadx jadx --help
 ```
 
 ### Run GUI
@@ -16,10 +23,17 @@ Here we will decompile an APK into Java code using JADX as a container
 Here we will start JADX-GUI with current directory mapped inside the container as `/workspace`
 
 ```bash
+# Allow connections from container
+xhost +local:root
+
 docker run --rm -it \
   -v `pwd`:/workspace \
   -v /etc/localtime:/etc/localtime:ro \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e "DISPLAY=unix${DISPLAY}" \
-  abh1sek/jadx
+  abh1sek/jadx \
+  jadx-gui 
+
+# Remove connections from container
+xhost -local:root
 ```

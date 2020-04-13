@@ -1,5 +1,7 @@
 FROM openjdk:8
 
+RUN apt-get update && apt-get install -y libxext6 libxrender1 libxtst6 libxi6 libxext-dev libxrender-dev libxtst-dev
+
 ENV JADX_VERSION "1.1.0"
 
 WORKDIR /opt/jadx-${JADX_VERSION}
