@@ -2,7 +2,7 @@
 
 [JADX](https://github.com/skylot/jadx) is a DEX to Java decompiler by [skylot](https://github.com/skylot). This repository contains `Dockerfile` and instructions to run JADX as a docker container.
 
-## TLDR; Get me started
+## Getting Started
 
 ### Pull the image
 
